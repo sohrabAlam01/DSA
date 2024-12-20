@@ -3,10 +3,12 @@
 // finding second smallest number
 //finding second largest number
 
-
+#include<bits/stdc++.h>
 #include<iostream>
 using namespace std;
 #include<vector>
+#include<map>
+
 //finding the smallest element  
 int smallestElement(int arr[], int n){
       
@@ -79,6 +81,43 @@ int secondLargest(int arr[], int n){
         else return -1;
 }
 
+////////////////counting frequency of an array
+
+//approach1:
+void countFreq1(int arr[], int n){
+       
+        vector<bool>visited(n, false);
+        for(int i=0; i<n; i++){
+             
+              if(visited[i] == true) continue;
+             
+              int count = 1;
+              for(int j=i+1; j<n; j++){
+                     if(arr[i] == arr[j]){
+                           visited[j] = true;
+                           count++;
+                     }
+              }
+
+              cout<<arr[i]<<" : "<<count<<endl;
+        }
+}
+
+
+//approach2: using hashmap
+
+void countFreq2(int arr[], int n){
+     
+    unordered_map<int, int> map;
+    for(int i=0; i<n; i++){
+        map[arr[i]]++;
+    }
+    for(auto ele : map){
+         cout<<ele.first<<" : "<<ele.second<<endl;
+    }
+      
+}
+
 
 int main(){
 
@@ -105,7 +144,8 @@ int main(){
    cout<<"Largest Number is " <<max<<endl;
    cout<<"Second smallest Number is " <<secondSmallestNum<<endl;
    cout<<"Second largest Number is " <<secondLargestNum<<endl;
-   
+   countFreq1(arr, n);
+   countFreq2(arr, n); 
 
     return 0;
 }
