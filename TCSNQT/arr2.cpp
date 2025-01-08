@@ -57,5 +57,10 @@ int main()
 
       printMe(arr, n);
 
+      typedef int x;
+
+      x c = 5;
+      cout<<c;
+
       return 0;
 }
