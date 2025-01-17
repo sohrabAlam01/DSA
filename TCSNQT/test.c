@@ -1,11 +1,14 @@
 #include<stdio.h>
 
+
 void main(){
+ int x = 10;
+ char *p;
 
-int a = printf("%d", printf("Gate 2023"));
-
-printf("%d", a);
-
-
+ p =(char*) &x;
+ printf("%d", *p);
+ printf("%c" ,*("Hello" + 1));
+  
+  int arr[][5] = {};
     return;
 }
