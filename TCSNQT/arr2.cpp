@@ -1,7 +1,7 @@
 ///////////rotate array elements by k distance/////////////////
 
 // approach1
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 void rotateArr(int *arr, int n, int k)
