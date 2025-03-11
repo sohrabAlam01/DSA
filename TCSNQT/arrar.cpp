@@ -75,9 +75,12 @@ int secondLargest(int arr[], int n){
                 else if(arr[i] > secondLargest && arr[i] != largest){
                         secondLargest = arr[i];
                 } 
+                //check if there exists atleast two distinct element 
                 if(i < n-1 && arr[i] != arr[i+1])  distinct = true;
         } 
+        //if there is atleast two distinct elements 
         if(distinct) return secondLargest;
+        //if all are same elements in the array
         else return -1;
 }
 
